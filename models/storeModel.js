@@ -11,7 +11,13 @@ const storeSchema = new Schema({
     required:[true,"price is required"],
     min:1
   },
-  company:String,
+  company:{
+    type:String,
+    enum:{
+      values:["ikea","liddy","caressa","marcos"],
+      message:'{VALUE} is not supported'
+    }
+  },
   rating:{
     type:Number,
     min:1,
